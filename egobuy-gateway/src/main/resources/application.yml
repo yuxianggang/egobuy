@@ -1,0 +1,14 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: egobuy-geteway-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+zuul:
+  prefix: /api
+  routes:
+    EGOBUY-SHOP: /shop/**
+    EGOBUY-FILE: /file/**
