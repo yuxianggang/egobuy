@@ -1,0 +1,20 @@
+# 服务端口配置
+server:
+  port: 9091
+
+spring:
+  # 应用名称
+  application:
+    name: egobuy-file
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 10MB
+      file-size-threshold: 5MB
+# 注册中心配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true

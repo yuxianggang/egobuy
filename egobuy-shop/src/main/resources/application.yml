@@ -1,0 +1,39 @@
+# 服务端口配置
+server:
+  port: 9090
+
+spring:
+  # 应用名称
+  application:
+    name: egobuy-shop
+  # 数据源配置
+  datasource:
+    url: jdbc:mysql://192.168.25.153:3306/egobug?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+  mvc:
+    date-format: yyyy-MM-dd HH:mm:ss
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+# 注册中心配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+# mybatis配置
+mybatis:
+  # 实体类别名
+  type-aliases-package: com.igeek.egobuy.egobuyshop.pojo
+  # 开启驼峰规则
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  # mapper.xml地址
+  mapper-locations: classpath:mapper/*Mapper.xml
+
+logging:
+  level:
+    com.eth.wallet.mapper: debug
